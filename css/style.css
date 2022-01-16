@@ -71,6 +71,7 @@ body.lock{
 }
 
 .container{
+  position: relative;
   width: 100%;
   max-width: 1470px;
   padding: 0 15px;
@@ -98,7 +99,7 @@ body.lock{
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 4;
 }
 
 .header__container{
@@ -195,12 +196,66 @@ body.lock{
   transform: scale(0);
 }
 
+.nav{
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background-color: #242424;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: top .3s;
+}
+
+.nav.active{
+  top: 0;
+}
+
+.nav__container{
+  max-width: 370px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.nav__link{
+  position: relative;
+  font-size: 60px;
+  color: #fff;
+  font-weight: 900;
+  display: inline-block;
+}
+
+.nav__link:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0; 
+  width: 0;
+  height: 2px;
+  background-color: #E4B348;
+  transition: width 0.3s ease-out;
+}
+
+.nav__link:hover:after,
+.nav__link:focus:after {
+  width: 100%;
+}
+
+.nav .nav__link:not(:last-child){
+  margin-bottom: 30px;
+}
+
 .intro__container{
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 2;
   height: 1080px;
   display: flex;
   align-items: center;
@@ -275,7 +330,7 @@ body.lock{
 .section-about{
   position: relative;
   padding-top: 200px;
-  padding-bottom: 200px;
+  padding-bottom: 250px;
 }
 
 .about__bg{
@@ -288,7 +343,9 @@ body.lock{
 }
 
 .title__container{
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0px;
   display: block;
 }
 
@@ -297,7 +354,7 @@ body.lock{
   position: absolute;
   top: 0;
   bottom: 0;
-  right: -20px;
+  right: -5px;
   width: 1px;
   height: 200px;
   background-color: #fff;
@@ -319,11 +376,16 @@ body.lock{
   max-width: 25px;
 }
 
+.about__media{
+  max-width: 600px;
+}
+
 .about__container{
   position: relative;
   z-index: 2;
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -415,8 +477,10 @@ body.lock{
 
 .advantages__container{
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
+  margin-left: 40px;
 }
 
 .title-brown{
@@ -456,12 +520,12 @@ body.lock{
 .advantages__text{
   font-size: 20px;
   color: #242424;
-  font-weight: 900;
+  font-weight: 300;
   line-height: 120%;
 }
 
 .advantages__media{
-  max-width: 300px;
+  width: 300px;
   animation: moving 5s infinite linear;
 }
 
@@ -472,8 +536,10 @@ body.lock{
 
 .catalog__container{
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
+  margin-left: 40px;
 }
 
 .catalog__number{
@@ -504,7 +570,7 @@ body.lock{
 }
 
 .catalog{
-  margin: 0 -60px;
+  margin: 0 -40px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -519,12 +585,10 @@ body.lock{
   height: 450px;
   border-radius: 40px;
   overflow: hidden;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
-  margin: 60px;
+  margin: 40px;
 }
 
 .catalog__item__mask{
@@ -592,6 +656,8 @@ body.lock{
 }
 
 .form__container{
+  position: relative;
+  z-index: 2;
   text-align: center;
   max-width: 600px;
   margin-left: 80px;
@@ -613,7 +679,7 @@ body.lock{
   font-size: 20px;
   color: #fff;
   padding: 15px;
-  background-color: #242424;
+  background-color: transparent;
   border-bottom: 1px solid #fff;
 }
 
@@ -635,10 +701,13 @@ body.lock{
 .contact__bg_1{
   position: absolute;
   top: 0;
+  z-index: 1;
   right: -270px;
+  max-width: 945px;
 }
 
 .contact__bg_2{
+  max-width: 1920px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -655,6 +724,13 @@ body.lock{
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.footer__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
 }
 
 .footer__block1{
@@ -684,8 +760,8 @@ body.lock{
 }
 
 .footer__icon{
- width: 30px;
- fill: #fff;
+  width: 30px;
+  fill: #fff;
 }
 
 .footer__text-brown{

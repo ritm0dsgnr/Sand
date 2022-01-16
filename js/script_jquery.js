@@ -13,16 +13,14 @@ $("[data-scroll]").on("click", function(event) {
 });
 
 $(".burger").on("click", function(event) {
+    $(".nav").toggleClass("active");
     $(".burger").toggleClass("active");
-    $(".burger__nav").toggleClass("active");
-    $(".burger_nav__link").toggleClass("active");
     $("body").toggleClass("lock");
 });
 
-$(".burger_nav__link").on("click", function(event) {
+$(".nav__link").on("click", function(event) {
+    $(".nav").removeClass("active");
     $(".burger").removeClass("active");
-    $(".burger__nav").removeClass("active");
-    $(".burger_nav__link").removeClass("active");
     $("body").removeClass("lock");
 });
 
