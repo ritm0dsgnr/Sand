@@ -481,6 +481,8 @@ body.lock{
   align-items: flex-start;
   justify-content: space-between;
   margin-left: 40px;
+
+  text-align: center;
 }
 
 .title-brown{
@@ -492,6 +494,7 @@ body.lock{
 }
 
 .advantages__content{
+  text-align: left;
   max-width: 790px;
   display: flex;
   flex-wrap: wrap;

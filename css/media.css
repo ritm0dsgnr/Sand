@@ -245,14 +245,12 @@
   }
   .footer__container .footer__inner:not(:last-child){
     margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1150 - 320)));
-}
-
-@media (max-width: 915px){
+  }
   .advantages__container{
     display: block;
-    margin-bottom: 40px;
   }
   .advantages__media{
+    margin-top: 40px;
   }
 }
 
