@@ -678,6 +678,7 @@ body.lock{
 }
 
 .form__input{
+  resize: none;
   width: 100%;
   font-size: 20px;
   color: #fff;
